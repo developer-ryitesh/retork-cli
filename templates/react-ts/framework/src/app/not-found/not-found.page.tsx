@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Helmet } from "react-helmet";
 
-const HelmetContainer = ({ children }: { children: ReactNode }) => (
+const MetaLayout = ({ children }: { children: ReactNode }) => (
    <>
       <Helmet>
          <title>404 - Page Not Found</title>
@@ -12,10 +12,14 @@ const HelmetContainer = ({ children }: { children: ReactNode }) => (
    </>
 );
 
-export default function NotFoundPage() {
+const Page = () => {
    return (
-      <HelmetContainer>
+      <MetaLayout>
          <p>404 | Page not found</p>
-      </HelmetContainer>
+      </MetaLayout>
    );
+};
+
+export default function NotFoundPage() {
+   return <Page />;
 }

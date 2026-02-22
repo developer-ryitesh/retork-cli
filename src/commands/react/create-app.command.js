@@ -36,6 +36,7 @@ export default async function CreateApp(input) {
       "@retork/interceptor", //
       "@retork/utils",
       "axios",
+      "chalk",
       "react-helmet",
       "react-router",
       "@reduxjs/toolkit",

@@ -1,13 +1,5 @@
-import type { Middleware } from "@reduxjs/toolkit";
+import { LoggerMiddlewareRedux } from "./logger-middleware.redux";
+import { ToastMiddlewareRedux } from "./toast-middleware.redux";
 
-const ReduxLogger: Middleware = (_) => (next) => (action: any) => {
-   if (action?.type.endsWith("/fulfilled")) {
-      console.log(`[Dispatched] : ${action?.type}`);
-   }
-   if (action?.type.endsWith("/rejected")) {
-      console.log(action);
-      console.log(`[Dispatched] : ${action?.type}`);
-   }
-   return next(action);
-};
-export { ReduxLogger };
+const middlewares = [LoggerMiddlewareRedux, ToastMiddlewareRedux];
+export default middlewares;

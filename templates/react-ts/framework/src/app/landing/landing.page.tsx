@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Helmet } from "react-helmet";
 
-const HelmetContainer = ({ children }: { children: ReactNode }) => (
+const MetaLayout = ({ children }: { children: ReactNode }) => (
    <>
       <Helmet>
          <title>Landing</title>
@@ -12,10 +12,14 @@ const HelmetContainer = ({ children }: { children: ReactNode }) => (
    </>
 );
 
-export default function LandingPage() {
+const Page = () => {
    return (
-      <HelmetContainer>
+      <MetaLayout>
          <p>Landing page work!</p>
-      </HelmetContainer>
+      </MetaLayout>
    );
+};
+
+export default function LandingPage() {
+   return <Page />;
 }

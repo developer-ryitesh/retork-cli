@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Helmet } from "react-helmet";
 
-const HelmetContainer = ({ children }: { children: ReactNode }) => (
+const MetaLayout = ({ children }: { children: ReactNode }) => (
    <>
       <Helmet>
          <title>PlaceHolder</title>
@@ -12,10 +12,14 @@ const HelmetContainer = ({ children }: { children: ReactNode }) => (
    </>
 );
 
-export default function PlaceHolderPage() {
+const Page = () => {
    return (
-      <HelmetContainer>
+      <MetaLayout>
          <p>PlaceHolder page work!</p>
-      </HelmetContainer>
+      </MetaLayout>
    );
+};
+
+export default function PlaceHolderPage() {
+   return <Page />;
 }

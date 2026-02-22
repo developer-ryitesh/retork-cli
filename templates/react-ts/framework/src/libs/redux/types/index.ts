@@ -1,8 +1,7 @@
-import type { ActionReducerMapBuilder } from "@reduxjs/toolkit";
-import store from "../store";
+import type store from "../store";
 
-type RootState = ReturnType<typeof store.getState>;
-type AppDispatch = typeof store.dispatch;
-type BuilderType<T> = ActionReducerMapBuilder<T>;
-
-export type { RootState, AppDispatch, BuilderType };
+export type { IService } from "./service.type";
+export type { IBuilder } from "./builder.type";
+export type AppStore = typeof store;
+export type RootState = ReturnType<AppStore["getState"]>;
+export type AppDispatch = AppStore["dispatch"];
